@@ -1,54 +1,27 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/iqNsZTne)
-## Requerimientos del Sistema de Cotización de Instalación Eléctrica
+# Clase692024
 
-### Descripción
-Se solicita un sistema para la **cotización de una instalación eléctrica** en una propiedad. El sistema permitirá realizar una cotización que detalle los insumos necesarios para realizar la instalación y el costo del trabajo. 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
 
-Por medio de la utilización de la libreria json-server se debe levantar un servidor local que permita la escritura y lectura en un archivo tipo `json`. Para más información visite el siguiente enlace [JSON Server](https://www.npmjs.com/package/json-server).
+## Development server
 
-En el archivo `db.json` se provee un listado de los tipos de módulos con caracteristicas como los espacios que ocupan en una caja (receptaculo que almacena los distintos módulos: interruptores, toma corrientes, usb, etc), el precio y otros. Es importante aclarar que cada caja tiene 3 lugares disponibles, pero cada modulo puede ocupar 1 o más lugares (3 como máximo).
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-### Funcionalidad
-El técnico podrá crear una cotización que incluya los distintos tipos de módulos que necesita para cada espacio (ambiente). La misma debe ser guardada en caso de que necesite ser consultada nuevamente.
+## Code scaffolding
 
-### Formulario de Cotización
-API: `/api/budgets` (POST)
-El formulario debe contener los siguientes campos:
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-- **Fecha de la cotización**: Requerida, no puede ser mayor al día actual.
-- **Cliente**: Requerido, solo se podrá cargar un presupuesto por cliente.
-- **Listado de módulos**: 
-  - Selección de tipo de modulo (obtenido de la lista proporcionada). API: `/api/module-types` (GET)
-  - Precio (solo lectura)
-  - Lugares que ocupa (solo lectura)
-  - Ambiente (requerido): un select con datos en base a el enumerador `Zone`
-  - Se deben cargar al menos **5 módulos**.
+## Build
 
-### Consideraciones importantes
-- Cada caja tiene **3 lugares** como máximo.
-  - Puede albergar hasta **3 módulos** de `1 slot`.
-  - O bien, **1 módulo** de `2 slots` y **1 módulo** de `1 slot`, lo cual da `3 slots`.
-- La cantidad de slots está definida en base al `module-type` de la api `api/module-types`.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-### Cálculo del Presupuesto
-API: `/api/budgets/{{id}}` (GET)
-Al guardar el presupuesto, se debe calcular y mostrar el resumen con:
+## Running unit tests
 
-1. **Cantidad de cajas necesarias** calculada en base a los módulos cargados (tener en cuenta que pueden quedar espacios sin ocupar los cuales permaneceran de esa manera).
-2. **Módulos agrupados** por ambiente (mostrar cada módulo con su nombre, precio y slots).
-3. **Total de la cotización** calculado en base a el precio que tiene cada módulo.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-### Visualización de Presupuestos
-- Los presupuestos guardados se visualizarán en una tabla con un botón para poder ver el presupuesto en modo solo lectura.
+## Running end-to-end tests
 
-### MockUp Images
-![Listado Presupuestos](./public/assets/budgetList.png)
-![Formulario Presupuesto #1](./public/assets/budgetForm1.png)
-![Formulario Presupuesto #2](./public/assets/budgetForm2.png)
-![Vista Presupuesto](./public/assets/budgetView.png)
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-### Consideraciones Técnicas
-- Utilizar **Formularios Reactivos**, aplicando las validaciones indicadas tanto para los controles fijos como los generados dinamicamente.
-- Utilizar **FormArray** para la generación de los módulos.
-- Utilizar **Routing** y **LazyLoading**.
-- Los datos deberán almacenarse en una **API** para poder recuperarlos posteriormente.
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

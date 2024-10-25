@@ -1,41 +1,109 @@
 {
-  "budgets": [],
-  "module-types": [
+  "programadores": [
     {
-      "id": "1",
-      "name": "Interruptor simple",
-      "slots": 1,
-      "price": 1000
+      "nombre": "Fabio",
+      "apellido": "Mercado",
+      "habilidades": [
+        "JavaScript",
+        "Angular",
+        "TypeScript"
+      ],
+      "fechaNacimiento": "1990-01-01",
+      "contacto": {
+        "email": "fabio@example.com",
+        "redSocial": "https://twitter.com/fabiomercado"
+      },
+      "id": "65asd"
     },
     {
-      "id": "2",
-      "name": "Interruptor doble",
-      "slots": 2,
-      "price": 2000
+      "id": "3354",
+      "nombre": "juancito",
+      "apellido": "perez",
+      "habilidades": [
+        ".Net"
+      ],
+      "contacto": {
+        "email": "juan@gmail.com",
+        "redSocial": "Linkedin"
+      }
     },
     {
-      "id": "3",
-      "name": "Toma corriente simple",
-      "slots": 1,
-      "price": 1500
+      "id": "ded1",
+      "nombre": "juancito",
+      "apellido": "perez ",
+      "habilidades": [
+        ".Net"
+      ],
+      "contacto": {
+        "email": "juna@gmail.com",
+        "redSocial": "instragram"
+      }
     },
     {
-      "id": "4",
-      "name": "Toma corriente doble",
-      "slots": 2,
-      "price": 3000
+      "id": "8c2b",
+      "nombre": "juancito",
+      "apellido": "perez2",
+      "habilidades": [
+        ".Net"
+      ],
+      "contacto": {
+        "email": "juan@gmail.com",
+        "redSocial": "instragram"
+      }
     },
     {
-      "id": "5",
-      "name": "Toma corriente triple",
-      "slots": 3,
-      "price": 1700
+      "id": "5c5e",
+      "nombre": "juacntio ",
+      "apellido": "perezcito",
+      "habilidades": [],
+      "contacto": {
+        "email": "juan",
+        "redSocial": "jkasdas"
+      }
     },
     {
-      "id": "6",
-      "name": "USB",
-      "slots": 1,
-      "price": 5000
+      "id": "aa42",
+      "nombre": "exequiel",
+      "apellido": "santoro",
+      "habilidades": [
+        ".Net",
+        "Java"
+      ],
+      "contacto": {
+        "email": "exe@gmailcom",
+        "redSocial": "linkedin"
+      }
+    },
+    {
+      "id": "5b81",
+      "nombre": "test",
+      "apellido": "test",
+      "contacto": {
+        "email": "tesst@asd",
+        "redSocial": "test"
+      },
+      "proyectos": []
+    },
+    {
+      "id": "3321",
+      "nombre": "asdkjab",
+      "apellido": "askdjn",
+      "contacto": {
+        "email": "asdjk@asdjkn",
+        "redSocial": "git"
+      },
+      "proyectos": [
+        {
+          "nombre": "asdsad",
+          "fechaInicio": "2024-10-18",
+          "fechaFin": "2024-10-31"
+        },
+        {
+          "nombre": "aksjdbn",
+          "fechaInicio": "2024-10-17",
+          "fechaFin": "2024-10-26"
+        }
+      ]
     }
   ]
 }

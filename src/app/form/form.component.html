@@ -1,0 +1,72 @@
+<form [formGroup]="form" (ngSubmit)="sendForm()" class="row g-3 container">
+    <h1>Datos del programador</h1>
+    <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Nombre:</label>
+        <input [ngClass]="{'is-invalid':form.controls['nombre'].invalid && form.controls['nombre'].touched }" formControlName="nombre" type="text" class="form-control">
+        @if(form.controls['nombre'].invalid && form.controls['nombre'].touched){
+        @if(form.controls['nombre'].errors?.['required']){
+        <div class="text-danger">Nombre obligatorio</div>
+        }}
+
+    </div>
+    <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Apellido:</label>
+        <input type="text" class="form-control" formControlName="apellido">
+
+    </div>
+    <!-- <div class="col-md-12">
+        <label for="validationCustomUsername" class="form-label">Habilidades</label>
+        <select class="form-select" name="habilidadSeleccionada" [(ngModel)]="habilidadSeleccionada">
+            @for(item of listHabilidades ; track $index){
+            <option [value]="item">{{item}}</option>
+            }
+        </select>
+        <div class="mt-2">
+            <button type="button" class="btn btn-primary" (click)="agregarHabilidades()">+</button>
+            @for(habilidad of prog.habilidades; track $index){
+            <span class="badge bg-primary m-1">{{habilidad}}
+                <button type="button" class="btn-close btn-close-white" (click)="eliminarHabilidades($index)"></button>
+            </span> }
+        </div>
+
+    </div>
+    <hr> -->
+    <div formGroupName="contacto" class="row container mt-2">
+        <h3>Datos del contacto</h3>
+        <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">Email:</label>
+            <input type="text" formControlName="email" class="form-control">
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">Red Social:</label>
+            <input type="text" formControlName="redSocial" class="form-control">
+        </div>
+    </div>
+    <div formArrayName="proyectos">
+        <button (click)="agregarProyectos()">Agregar</button>
+        @for(proyecto of proyectos.controls; track $index){
+        <div [formGroupName]="$index">
+            <div class="col-md-4">
+                <label class="form-label">Nombre:</label>
+                <input type="text" formControlName="nombre" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Fecha Inicio:</label>
+                <input type="date" formControlName="fechaInicio" class="form-control">
+                @if(proyecto.get('fechaInicio')?.hasError('errorFechaInicio')){
+                  <div class="text-danger">La fecha de inicio no puede ser mayor a la de hoy</div>
+                }
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Fecha Fin:</label>
+                <input type="date" formControlName="fechaFin" class="form-control">
+            </div>
+        </div>
+        <button class="btn btn-close" (click)="quitarProyecto($index)"></button>
+        }
+
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+</form>
